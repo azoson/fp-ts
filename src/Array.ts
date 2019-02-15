@@ -21,15 +21,6 @@ import { Witherable1 } from './Witherable'
 
 // Adapted from https://github.com/purescript/purescript-arrays
 
-declare global {
-  interface Array<T> {
-    /** phantom property added by `fp-ts` */
-    _URI: URI
-    /** phantom property added by `fp-ts` */
-    _A: T
-  }
-}
-
 declare module './HKT' {
   interface URI2HKT<A> {
     Array: Array<A>

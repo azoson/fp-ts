@@ -18,9 +18,6 @@ const T = optionT.getOptionT2v(either)
 const foldT = optionT.fold(either)
 
 export class EitherOption<L, A> {
-  readonly _A!: A
-  readonly _L!: L
-  readonly _URI!: URI
   constructor(readonly value: Either<L, Option<A>>) {}
   map<B>(f: (a: A) => B): EitherOption<L, B> {
     return new EitherOption(T.map(this.value, f))

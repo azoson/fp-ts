@@ -16,10 +16,6 @@ export const URI = 'ReaderEither'
 export type URI = typeof URI
 
 export class ReaderEither<E, L, A> {
-  readonly _A!: A
-  readonly _L!: L
-  readonly _U!: E
-  readonly _URI!: URI
   constructor(readonly run: (e: E) => Either<L, A>) {}
   map<B>(f: (a: A) => B): ReaderEither<E, L, B> {
     return new ReaderEither(readerTEither.map(this.run, f))

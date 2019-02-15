@@ -18,8 +18,6 @@ const T = optionT.getOptionT2v(task)
 const foldT = optionT.fold(task)
 
 export class TaskOption<A> {
-  readonly _A!: A
-  readonly _URI!: URI
   constructor(readonly value: Task<Option<A>>) {}
   run(): Promise<Option<A>> {
     return this.value.run()

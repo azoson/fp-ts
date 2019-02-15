@@ -18,8 +18,6 @@ const T = optionT.getOptionT2v(array)
 const foldT = optionT.fold(array)
 
 export class ArrayOption<A> {
-  readonly _A!: A
-  readonly _URI!: URI
   constructor(readonly value: Array<Option<A>>) {}
   map<B>(f: (a: A) => B): ArrayOption<B> {
     return new ArrayOption(T.map(this.value, f))

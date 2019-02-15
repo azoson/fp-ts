@@ -21,9 +21,6 @@ export const URI = 'StateIO'
 export type URI = typeof URI
 
 export class StateIO<S, A> {
-  readonly _A!: A
-  readonly _L!: S
-  readonly _URI!: URI
   constructor(readonly value: (s: S) => IO<[A, S]>) {}
   run(s: S): [A, S] {
     return this.value(s).run()

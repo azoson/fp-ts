@@ -15,9 +15,6 @@ export const URI = 'TheseOption'
 export type URI = typeof URI
 
 export class TheseOption<L, A> {
-  readonly _A!: A
-  readonly _L!: L
-  readonly _URI!: URI
   constructor(readonly value: These<L, Option<A>>) {}
 }
 
